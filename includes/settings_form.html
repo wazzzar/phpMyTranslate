@@ -1,0 +1,96 @@
+<div class="tabs clearfix">
+	<form class="settings_form">
+	<ul>
+		<li><a href="#tabs-1"><span><?php echo $GLOBALS["LANG"]["translate_api"]; ?></span></a></li>
+		<li><a href="#tabs-2"><span><?php echo $GLOBALS["LANG"]["connect"]; ?></span></a></li>
+		<li><a href="#tabs-3"><span><?php echo $GLOBALS["LANG"]["program_sets"]; ?></span></a></li>
+	</ul>
+	<div class="translate_api" id="tabs-1">
+		<h3><?php echo $GLOBALS["LANG"]["translater_sets"]; ?></h3>
+		<table>
+			<tbody>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["translater_url"]; ?></td>
+					<td><textarea name="translater_url" rows="2"><?php echo $GLOBALS["translater_url"]; ?></textarea></td>
+				</tr>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["api_key"]; ?></td>
+					<td><textarea name="api_key" rows="2"><?php echo $GLOBALS["api_key"]; ?></textarea></td>
+				</tr>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["lang_to"]; ?></td><!--  -->
+					<td><input type="text" name="lang_to" value="<?php echo $GLOBALS["lang_to"]; ?>"></td>
+				</tr>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["format"]; ?></td>
+					<td><input type="text" name="format" value="<?php echo $GLOBALS["format"]; ?>"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="connect_data" id="tabs-2">
+		<h3><?php echo $GLOBALS["LANG"]["db_connect"]; ?></h3>
+		<table>
+			<tbody>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["db_server"]; ?></td>
+					<td><input type="text" name="db_host" value="<?php echo $GLOBALS["host"]; ?>"></td>
+				</tr>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["user_name"]; ?></td>
+					<td><input type="text" name="db_user" value="<?php echo $GLOBALS["user"]; ?>"></td>
+				</tr>
+				<tr>
+					<td>
+						<?php echo $GLOBALS["LANG"]["user_password"]; ?>( <input type="checkbox" class="password_show" id="db_pass">
+						<label for="db_pass"><?php echo $GLOBALS["LANG"]["access_password_show"]; ?></label>)
+					</td>
+					<td>
+						<input type="password" name="db_pass" value="<?php echo $GLOBALS["pass"]; ?>">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="program_sets" id="tabs-3">
+		<h3><?php echo $GLOBALS["LANG"]["application_access"]; ?></h3>
+		<table>
+			<tbody>
+				<tr>
+					<td><?php echo $GLOBALS["LANG"]["access_login"]; ?></td>
+					<td><input type="text" name="user_login" value="<?php echo $GLOBALS["user_login"]; ?>"></td>
+				</tr>
+				<tr>
+					<td>
+						<?php echo $GLOBALS["LANG"]["access_password"]; ?>( <input type="checkbox" class="password_show" id="user_password">
+						<label for="user_password"><?php echo $GLOBALS["LANG"]["access_password_show"]; ?></label>)
+					</td>
+					<td>
+						<input type="password" name="user_password" value="<?php echo $GLOBALS["user_password"]; ?>">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<div class="language"><?php echo $GLOBALS["LANG"]["application_lang"]; ?>
+			<select name="application_lang" id="application_lang">
+				<?php
+					$dir = dir("../includes/langs/");
+					while($file = $dir -> read()){
+						if(preg_match('#^\.#', $file) || preg_match('#\.js$#', $file) || $file == "Thumbs.db") continue;
+						$file = explode(".", $file);
+						$file = $file[0];
+						$s = $GLOBALS["cur_apl_lang"] == $file ? "selected='selected'" : "";
+						echo "<option value='$file' $s>$file</option>";
+					}
+				?>
+			</select>
+		</div>
+		<br /><br />
+		<div class="language">
+			<label for="bind_langs"><?php echo $GLOBALS["LANG"]["bind_langs"]; ?></label>
+			<input type="checkbox" name="bind_langs" id="bind_langs">
+		</div>
+	</div>
+	</form>
+</div>

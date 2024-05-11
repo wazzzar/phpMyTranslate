@@ -1,0 +1,147 @@
+.content{
+	
+}
+
+.sidebar{
+	padding:0.5em;
+	color:#158C92;
+	background:#E1F1F1;
+	width:16%;
+	min-width:12em;
+	overflow:auto;
+	height:88%;
+	min-height:34em;
+	float:left;
+	border-right:#FFBE00 2px solid;
+	border-bottom:#FFBE00 2px solid;
+}
+
+.sidebar li{
+	cursor:pointer;
+}
+
+.sidebar li:hover{
+	color:#5CDBDB;
+}
+
+.view{
+	margin-left:18%;
+}
+
+.view h3{
+	padding-bottom:0.5em;
+}
+
+.manual a{
+	color:#5CDBDB;
+}
+
+.manual a:hover{
+	color:#158C92;
+}
+
+.manual p{
+	text-align:justify;
+	padding:0.5em;
+	text-indent:2em;
+}
+
+.manual code{
+	padding-left:2em;
+}
+
+.manual img{
+	vertical-align:middle;
+}
+
+.table_data{
+	background:#ccc;
+	margin-right:4em;
+}
+
+.field_name{
+	position:relative;/**/
+	padding:0.25em 0.75em;
+	background:#434343;
+}
+
+.field_name:hover{
+	cursor:pointer;
+}
+
+.field_type{
+	display:none;
+	position:absolute;
+	z-index:+9;
+	background:#5B5B5B;
+	padding:0.125em 0.25em;
+	border:2px solid #ccc;
+}
+
+.data{
+	padding:0.25em 0.75em;
+	background:#666666;
+}
+
+.edit_row:hover, .add_row:hover, .del_row:hover, .save_row:hover{
+	cursor:pointer;
+}
+
+.edit_row:hover > .field_type, .add_row:hover > .field_type, .del_row:hover > .field_type, .save_row:hover > .field_type{
+	display:inline;
+	margin-top:-1.5em;
+}
+
+.add_row{
+	display:none;
+}
+
+.empty{
+	display:none;
+}
+
+.input_text input[type=text], .input_text textarea{
+	padding:0.25em 0.75em;
+	font-size:100%;
+	width:auto;
+	font-family:Segoe UI, Verdand, Tahoma;
+	border:1px solid #999;
+}
+
+.tabs{
+	
+}
+
+.tabs h3{
+	padding:0.5em 0.75em 0;
+	color:#eee;
+	background:#666;
+	height:2em;
+}
+
+.tabs table{
+	text-align:center;
+	width:100%;
+	border:1px solid #666;
+}
+
+.tabs table td{
+	padding:0.25em 0.75em;
+}
+
+.tabs table td:first-of-type{
+	width:10em;
+}
+
+.language{
+	float:right;
+}
+
+.modal_dialog{
+	display:none;
+	
+}
+
+.modal_dialog table{
+	color: #000;
+}

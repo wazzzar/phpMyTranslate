@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 16px !important;
+}
+
+html, body{
+	width:100%;
+	height:99%;
+}
+
+body{
+	background:#026B71;
+	font-family:Segoe UI, Verdand, Tahoma;
+	color:#eee;
+	min-width:60em;
+}
+
+h1{
+	font-size: 150%;
+}
+
+h2{
+	font-size: 125%;
+}
+
+h3{
+	font-size: 100%;
+}
+
+.clearFix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.main{
+	margin:0.25em;
+	background:#15505E;
+	height:100%;
+}
+
+.auth_form{
+	display:none;
+}
